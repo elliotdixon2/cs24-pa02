@@ -41,7 +41,7 @@ void PrefixList::filterMList(MovieList& movies, std::string prefix){
 void PrefixList::printPFList(){
     for(int i = 0; i < pfList.size(); i++){
         if(pfList[i].empty()){
-            std::cout << "No Movies found with prefix " << pf[i] << std::endl;
+            std::cout << "No movies found with prefix " << pf[i] << std::endl;
         } else {
             for(auto it: pfList[i]){
                 std::cout << it.title << ", " << it.rating << std::endl;
