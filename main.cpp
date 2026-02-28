@@ -1,6 +1,6 @@
 // Winter'24
 // Instructor: Diba Mirza
-// Student name: 
+// Student name: Elliot Dixon 
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -14,7 +14,6 @@
 #include <queue>
 #include <sstream>
 using namespace std;
-
 #include "utilities.h"
 #include "movies.h"
 
@@ -104,7 +103,14 @@ Time complexity analysis of printing prefix info:
 
 
 Runtimes on input files: 
-
+./runMovies input_20_random.csv prefix_large.txt
+    326ms 
+./runMovies input_100_random.csv prefix_large.txt
+    374ms
+./runMovies input_1000_random.csv prefix_large.txt
+    381ms
+./runMovies input_76920_random.csv prefix_large.txt
+    1677ms
 
 
 Space complexity for Prefix List implementation:
