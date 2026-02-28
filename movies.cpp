@@ -28,12 +28,14 @@ bool PrefixList::Movie::operator<(const Movie& right) const{
 
 void PrefixList::filterMList(MovieList& movies, std::string prefix){
     std::set<Movie> result;
-    for(auto it: movies.getList()){
-        if(prefix == it.title.substr(0,prefix.length())){
-            result.insert(Movie(it.title,it.rating));
-        } else if (!result.empty()){
-            break;
-        }
+    auto& list = movies.getList();
+    auto dummy = *list.begin();
+    dummy.title = prefix;
+    dummy.rating = 0;
+    auto it = list.lower_bound(dummy);
+    while(it != list.end() && it->title.substr(0,prefix.length()) == prefix){
+        result.insert(Movie(it->title,it->rating));
+        ++it;
     }
     pfList.push_back(result);
     pf.push_back(prefix);
